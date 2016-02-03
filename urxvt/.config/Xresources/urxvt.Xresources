@@ -1,0 +1,5 @@
+URxvt.perl-ext-common: selection-to-clipboard
+URxvt.scrollBar: false
+URxvt.font: xft:Sauce Code Powerline:pixelsize=15:antialias=true
+URxvt.depth: 32
+URxvt.background: [80]#FDE8B3

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf</command>
+    </action>
+  </item>
+  <item label="Audio Settings">
+    <action name="Execute">
+      <command>pavucontrol</command>
+    </action>
+  </item>
+  <item label="Manage Syncthing">
+    <action name="Execute">
+      <command>xdg-open http://localhost:8384/</command>
+    </action>
+  </item>
+  <separator />
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+<menu id="power" label="Power">
+  <item label="Log Out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+  <item label="Lock Screen">
+    <action name="Execute">
+        <command>sxlock</command>
+    </action>
+  </item>
+  <separator />
+  <item label="Suspend">
+    <action name="Execute">
+        <command>systemctl suspend</command>
+    </action>
+  </item>
+  <item label="Reboot">
+    <action name="Execute">
+      <command>systemctl reboot</command>
+    </action>
+</item>
+  <item label="Shutdown">
+    <action name="Execute">
+        <command>systemctl poweroff</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Rxvt Unicode">
+    <action name="Execute">
+      <command>urxvt</command>
+    </action>
+  </item>
+  <item label="Thunar">
+    <action name="Execute">
+      <command>Thunar</command>
+    </action>
+  </item>
+  <item label="Chromium">
+    <action name="Execute">
+      <command>chromium</command>
+    </action>
+</item>
+  <item label="Telegram">
+    <action name="Execute">
+      <command>telegram-desktop</command>
+    </action>
+  </item>
+  <item label="Atom">
+    <action name="Execute">
+      <command>atom</command>
+    </action>
+  </item>
+  <menu id="apps-net-menu"/>
+  <separator />
+  <menu id="system-menu"/>
+  <menu id="power" />
+</item>
+</menu>
+
+</openbox_menu>

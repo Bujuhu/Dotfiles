@@ -1,0 +1,13 @@
+{
+  "name":"Orange",
+  "groups": {
+      "user": { "fg":"black", "bg":"orange"},
+      "cwd": { "fg": "black", "bg": "light-orange" },
+      "cwd:current_folder": { "fg": "black", "bg": "light-orange" },
+      "cwd:divider": { "fg": "black", "bg": "light-orange" },
+      "branch": { "fg": "black", "bg": "bright-yellow" },
+      "branch_clean": { "fg": "black", "bg": "bright-yellow"},
+      "branch_dirty": { "fg": "dark-green", "bg": "bright-yellow"},
+      "exit_fail": { "fg": "white-text", "bg": "dark-red"}
+    }
+}

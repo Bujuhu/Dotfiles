@@ -1,0 +1,5 @@
+#!/bin/sh
+
+theme="orange"
+
+feh --bg-fill --no-fehbg $HOME/.themes/$theme/wallpaper.png

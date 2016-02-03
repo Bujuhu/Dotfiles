@@ -1,0 +1,9 @@
+rofi.font: Source Code Pro 13
+rofi.fb: #000000
+rofi.bg: #FDE8B3
+rofi.hlbg: #FAB654
+rofi.hlfg: #FFFFFF
+rofi.bc: #FAB654
+rofi.bw: 2
+rofi.opacity: 85
+rofi.m: 0

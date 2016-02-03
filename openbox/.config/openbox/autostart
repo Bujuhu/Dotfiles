@@ -1,0 +1,10 @@
+#Window Manager Stuff
+tint2 &
+compton -b --config ~/.config/compton.conf &
+sh ~/.fehbg &
+
+#Autostart Applications
+syncthing -no-browser &
+wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/1Password\ 4/Agile1pAgent.exe &
+prismatik &
+telegram-desktop
