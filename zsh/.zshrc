@@ -1,6 +1,7 @@
+PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 
 #Setting powerline theme
-. /usr/share/zsh/site-contrib/powerline.zsh
+. /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
