@@ -7,4 +7,5 @@ sh ~/.fehbg &
 syncthing -no-browser &
 wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/1Password\ 4/Agile1pAgent.exe &
 prismatik &
-telegram-desktop
+telegram-desktop &
+xflux -l 48.2085 -g 16.3721 -k 400
