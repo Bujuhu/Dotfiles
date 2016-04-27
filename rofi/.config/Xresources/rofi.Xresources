@@ -1,9 +1,5 @@
 rofi.font: Source Code Pro 13
-rofi.fb: #000000
-rofi.bg: #FDE8B3
-rofi.hlbg: #FAB654
-rofi.hlfg: #FFFFFF
-rofi.bc: #FAB654
-rofi.bw: 2
-rofi.opacity: 85
-rofi.m: 0
+
+rofi.color-enabled: true
+rofi.color-window: #fde8b3, argb:7bfab654, argb:0000000
+rofi.color-normal: argb:fbfde8b3, #002b36, #fde8b3, #fab654, #ffffff
