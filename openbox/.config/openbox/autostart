@@ -10,4 +10,4 @@ telegram-desktop &
 xflux -l 48.2085 -g 16.3721 -k 400 &
 
 #Include local settings
-sh ./autostart.local
+sh ~/.config/openbox/autostart.local &

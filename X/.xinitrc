@@ -20,7 +20,8 @@ if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
 fi
 if [ -d "$userresourcesDir" ] ; then
- for f in "$userresourcesDir/*" ; do
+ for f in $userresourcesDir/* ; do
+  echo $f
   xrdb -merge $f
  done
  unset f
@@ -37,6 +38,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 #UI specific envireoment variables
-QT_STYLE_OVERRIDE=GTK+
+export QT_STYLE_OVERRIDE=GTK+
 
 exec openbox-session
