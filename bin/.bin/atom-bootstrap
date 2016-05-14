@@ -1,0 +1,28 @@
+#!/bin/bash
+MSG="Coudn't find /usr/bin/apm. Please make sure Atom is installed"
+FILE=$HOME/.atom/package-list.txt
+
+function save {
+  if [ -e /usr/bin/apm ]
+  then
+    apm list --installed --bare > $FILE
+  else
+    echo $MSG
+  fi
+}
+function install {
+  if [ -e /usr/bin/apm ]
+  then
+    apm install --packages-file $FILE
+  else
+    echo $MSG
+  fi
+}
+case $1 in
+  'save')
+    save;;
+  'install')
+    install;;
+  *)
+  printf "Usage: \n save: Saves packages into %s \n install: installs saved packages from %s" "$FILE"
+esac

@@ -1,0 +1,26 @@
+"*":
+  core:
+    disabledPackages: [
+      "w3c-validation"
+      "jshint"
+    ]
+  editor:
+    fontFamily: "monospace"
+    fontSize: 16
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+  jshint:
+    asi: true
+  linter: {}
+  "linter-swiftc": {}
+  minimap:
+    adjustMinimapWidthToSoftWrap: false
+    charHeight: 8
+    charWidth: 3
+    displayPluginsControls: false
+  pigments:
+    markerType: "dot"
+  welcome:
+    showOnStartup: false

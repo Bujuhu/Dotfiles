@@ -1,4 +1,4 @@
-PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
+PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin:/$HOME/.bin
 
 #Setting powerline theme
 . /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
