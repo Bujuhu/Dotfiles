@@ -2,7 +2,7 @@
 MSG="Coudn't find /usr/bin/apm. Please make sure Atom is installed"
 FILE=$HOME/.atom/package-list.txt
 
-function save {
+function backup {
   if [ -e /usr/bin/apm ]
   then
     apm list --installed --bare > $FILE
@@ -10,7 +10,7 @@ function save {
     echo $MSG
   fi
 }
-function install {
+function restore {
   if [ -e /usr/bin/apm ]
   then
     apm install --packages-file $FILE
@@ -19,10 +19,10 @@ function install {
   fi
 }
 case $1 in
-  'save')
-    save;;
-  'install')
-    install;;
+  'backup')
+    backup;;
+  'restore')
+    restore;;
   *)
-  printf "Usage: \n save: Saves packages into %s \n install: installs saved packages from %s" "$FILE"
+  printf "Usage: \n backup: Saves currently installed packages into %s \n restore: installs saved packages from %s" "$FILE" "$FILE"
 esac
