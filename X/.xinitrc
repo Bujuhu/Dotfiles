@@ -39,5 +39,4 @@ fi
 
 #UI specific envireoment variables
 export QT_STYLE_OVERRIDE=GTK+
-
-exec openbox-session
+exec $WM
