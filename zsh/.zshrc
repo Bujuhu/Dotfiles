@@ -1,4 +1,26 @@
+#!/bin/zsh
 PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin:/$HOME/.bin
+
+#Load local configuration Options
+if [ -f "/$HOME/.z.local" ]; then
+  source "/$HOME/.z.local"
+fi
+
+export EDITOR=editor
+export VISUAL=EDITOR
+
+#Aliases
+alias ls='ls --color'
+alias ll='ls -la'
+
+alias ..="cd .."
+alias gti='git'
+alias npm-exec='PATH=$(npm bin):$PATH'
+
+#Applicaton Shortcuts
+alias 1password='wine "$HOME/.wine/drive_c/Program Files (x86)/1Password 4/1Password.exe"'
+alias 1pw='1password'
+alias racethesun='/opt/racethesun/RaceTheSun.x86'
 
 #Setting powerline theme
 . /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
