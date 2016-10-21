@@ -12,10 +12,16 @@ export VISUAL=EDITOR
 #Aliases
 alias ls='ls --color'
 alias ll='ls -la'
+alias del="mv -t ~/.local/share/Trash/files"
 
-alias ..="cd .."
 alias gti='git'
 alias npm-exec='PATH=$(npm bin):$PATH'
+
+
+#Directory Shortcuts
+alias ..="cd .."
+alias pro="CDPATH=~/Sync/Projects cd"
+alias home="cd ~"
 
 #Applicaton Shortcuts
 alias 1password='wine "$HOME/.wine/drive_c/Program Files (x86)/1Password 4/1Password.exe"'
