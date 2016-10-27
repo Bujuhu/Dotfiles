@@ -1,14 +1,18 @@
 "*":
+  "atom-minimap-titles":
+    font: "ANSI Shadow"
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "w3c-validation"
       "jshint"
       "linter-htmlhint"
       "pigments"
     ]
+    telemetryConsent: "no"
   editor:
     fontFamily: "monospace"
-    fontSize: 17
+    fontSize: 18
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -23,6 +27,7 @@
   "livestyle-atom":
     analyzer:
       notify: false
+      notifyCampaign: false
   minimap:
     adjustMinimapWidthToSoftWrap: false
     charHeight: 8
