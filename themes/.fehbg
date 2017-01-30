@@ -2,4 +2,4 @@
 
 theme="orange"
 
-feh --bg-fill --no-fehbg $HOME/.themes/$theme/wallpaper.png
+feh --bg-fill --no-fehbg $HOME/.themes/$theme/neusiedlersee.jpg
