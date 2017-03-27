@@ -1,0 +1,6 @@
+[user]
+	email = juri@schreib.at
+	name = Juri Schreib
+	signingkey = 136B1CA6442A783704A4F8459CC9C56DF99061CE
+[commit]
+	gpgsign = true
