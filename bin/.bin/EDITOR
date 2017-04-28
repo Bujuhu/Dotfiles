@@ -1,7 +1,0 @@
-#!/bin/sh
-#Setting the Visual and Editor Variables
-if [ -n "$DISPLAY" ]; then
-  atom --wait "$@"
-else
-  exec "nano"
-fi

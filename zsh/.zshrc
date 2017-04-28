@@ -13,8 +13,8 @@ source "/$HOME/.config/zsh/alias.zsh"
 # I intent to replace poweline with someting more lightweight in the future. Probably a dyi solution
 # source "/$HOME/.config/zsh/prompt.zsh"
 
-export EDITOR=EDITOR
-export VISUAL=EDITOR
+export EDITOR=editor
+export VISUAL=editor
 
 
 
