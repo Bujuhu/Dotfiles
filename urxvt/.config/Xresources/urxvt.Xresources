@@ -1,3 +1,5 @@
+#include "theme.Xresources"
+
 URxvt.perl-ext-common: default,matcher,clipboard,selection-to-clipboard
 URxvt.url-launcher: xdg-open
 URxvt.matcher.button: 1
@@ -5,4 +7,4 @@ URxvt.matcher.button: 1
 URxvt.scrollBar: false
 URxvt.font: xft:Sauce Code Powerline:pixelsize=15:antialias=true
 URxvt.depth: 32
-URxvt.background: [80]#FDE8B3
+URxvt.background: bg_transparent

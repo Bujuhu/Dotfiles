@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function set_theme {
+  ln -s $HOME/.config/Xresources/$1.Xresources $HOME/.config/Xresources/theme.Xresources
+}
+
+case $1 in
+  'set_theme')
+    set_theme $2;;
+  *)
+  printf "Usage: \n set_theme: Set a theme"
+esac

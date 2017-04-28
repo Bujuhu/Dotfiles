@@ -1,0 +1,11 @@
+Xcursor.theme:adwaita
+Xcursor.size:20
+
+! Colors
+
+#define bg_transparent [80]#FDE8B3
+#define bg #FDE8B3
+#define fg #FAB654
+
+#define bg_contrast #002b36
+#define fg_contrast #ffffff
