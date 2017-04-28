@@ -1,5 +1,5 @@
 #!/bin/zsh
-PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin:/$HOME/.bin:/$HOME/.bin/application_shortcuts
+PATH=$HOME/.gem/ruby/2.3.0/bin:/$HOME/.bin:/$HOME/.bin/application_shortcuts:$PATH
 
 #Load local configuration Options
 if [ -f "/$HOME/.z.local" ]; then
@@ -7,7 +7,11 @@ if [ -f "/$HOME/.z.local" ]; then
 fi
 
 #Load aliases
-source "/$HOME/.zsh_alias"
+source "/$HOME/.config/zsh/alias.zsh"
+
+# Load Prompt (PS1)
+# I intent to replace poweline with someting more lightweight in the future. Probably a dyi solution
+# source "/$HOME/.config/zsh/prompt.zsh"
 
 export EDITOR=EDITOR
 export VISUAL=EDITOR
@@ -18,7 +22,6 @@ export VISUAL=EDITOR
 . /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 
-#PROMPT="%n "
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate

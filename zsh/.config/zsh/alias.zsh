@@ -15,3 +15,4 @@ alias home="cd ~"
 
 #Command substitutions
 alias 1pw=1password
+#salias ssh="printf '\033]11;thistle1\007';ssh"
