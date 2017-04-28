@@ -6,7 +6,6 @@
       "w3c-validation"
       "jshint"
       "linter-htmlhint"
-      "pigments"
     ]
     telemetryConsent: "no"
   editor:
@@ -18,11 +17,12 @@
     softWrap: true
   "exception-reporting":
     userId: "be9cbc29-3d6a-24fb-5a22-c4045d940a60"
-  linter:
-    errorPanelHeight: 138
+  linter: {}
   "linter-python":
     executablePath: "/usr/bin/pylama"
   "linter-swiftc": {}
+  "linter-ui-default":
+    showPanel: true
   "livestyle-atom":
     analyzer:
       notify: false
@@ -34,6 +34,7 @@
     displayPluginsControls: false
   pigments:
     markerType: "dot"
+  "spell-check": {}
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:
