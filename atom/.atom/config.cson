@@ -10,7 +10,7 @@
     telemetryConsent: "no"
   editor:
     fontFamily: "monospace"
-    fontSize: 16
+    fontSize: 15
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -18,11 +18,12 @@
   "exception-reporting":
     userId: "be9cbc29-3d6a-24fb-5a22-c4045d940a60"
   linter: {}
+  "linter-jshint":
+    jshintFileName: "~/.jshintrc"
   "linter-python":
     executablePath: "/usr/bin/pylama"
   "linter-swiftc": {}
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "livestyle-atom":
     analyzer:
       notify: false
