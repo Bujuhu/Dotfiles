@@ -3,8 +3,8 @@ Xcursor.size:20
 
 ! Colors
 
-#define bg_transparent_rgba rgba:FD00/E800/B300/CC00
-#define bg_transparent_argb argb:CCFDE8B3
+#define bg_transparent_rgba rgba:FD00/E800/B300/ffff
+#define bg_transparent_argb argb:ffFDE8B3
 #define bg #FDE8B3
 #define fg #FAB654
 
