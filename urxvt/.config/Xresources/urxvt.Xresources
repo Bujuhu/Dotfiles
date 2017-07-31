@@ -7,4 +7,4 @@ URxvt.matcher.button: 1
 URxvt.scrollBar: false
 URxvt.font: xft:Sauce Code Powerline:pixelsize=15:antialias=true
 URxvt.depth: 32
-URxvt.background: bg_transparent
+URxvt.background: bg_transparent_rgba

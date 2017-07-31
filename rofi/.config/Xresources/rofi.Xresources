@@ -3,5 +3,5 @@
 rofi.font: Source Code Pro 13
 
 rofi.color-enabled: true
-rofi.color-window: bg, fg, argb:0000000
-rofi.color-normal: bg, bg_contrast, bg, fg, fg_contrast
+rofi.color-window: bg_transparent_argb, fg, argb:0000000
+rofi.color-normal: argb:00000000, bg_contrast, argb:00000000, fg, fg_contrast
