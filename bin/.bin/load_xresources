@@ -1,0 +1,14 @@
+userresourcesDir=$HOME/.config/Xresources
+userresources=$HOME/.Xresources
+
+xrdb -remove
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+if [ -d "$userresourcesDir" ] ; then
+ for f in $userresourcesDir/* ; do
+  echo $f
+  xrdb -merge $f
+ done
+ unset f
+fi
