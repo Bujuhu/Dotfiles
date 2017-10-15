@@ -22,11 +22,11 @@ The icon theme is not bundled with this repository and has to be installed manua
 
 To switch between wallpapers modify the file path in [.fehbg](./.fehbg)
 
-### [neusiedlersee.jpg](./neusiedlersee.jpg)
+### [neusiedlersee.jpg](./.themes/orange/neusiedlersee.jpg)
 
 Shot by myself. Fee free to use it however you desire.
 
-### [orange.png](./orange.png)
+### [orange.png](./.themes/orange/orange.png)
 
 I believe this is somehow extracted from the Google calendar app. Sadly, I'm not able to find an original source for it.
 
@@ -43,4 +43,4 @@ Unless you use either use my Dotfiles or modify yours so they use the provided X
 
 ## Notable things
 
-I disabled the close, minimize and maximize buttons on gtk3 windows. If you need them reenable them by removeing `gtk-decoration-layout=menu:` inside [settings.ini](./gtk-3.0/settings.ini)
+I disabled the close, minimize and maximize buttons on gtk3 windows. If you need them reenable them by removeing `gtk-decoration-layout=menu:` inside [settings.ini](./.config/gtk-3.0/settings.ini)
