@@ -1,10 +1,11 @@
 Dotfiles
 ===
-*Work in Progress...*
 
-Details and Documentation will follow soon. But you should be able to get up and running pretty easily using [Gnu Stow](https://www.gnu.org/software/stow/)
+My Dotfiles repository comprised of  [Stow](https://www.gnu.org/software/stow/) Packages.
 
-## Environment Variables
+*Documentation for individual packages will follow*
+
+## Global Environment Variables
 To add or override custom variables you don't want to add to the `.zshrc` Dotfiles, create the file `.z.local` and add it to your home directory.
 
 Currently my Dotfiles are sensitive to the following Environment Variables:
