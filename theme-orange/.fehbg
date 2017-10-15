@@ -1,5 +1,3 @@
 #!/bin/sh
 
-theme="orange"
-
-feh --bg-fill --no-fehbg $HOME/.themes/$theme/neusiedlersee.jpg
+feh --bg-fill --no-fehbg $HOME/.themes/orange/neusiedlersee.jpg
