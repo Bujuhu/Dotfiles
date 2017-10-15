@@ -1,11 +1,25 @@
 "*":
   "atom-minimap-titles":
     font: "ANSI Shadow"
+  autosave:
+    enabled: true
   core:
     disabledPackages: [
       "w3c-validation"
       "jshint"
       "linter-htmlhint"
+      "linter-jshint"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "node_modules"
+      "build"
     ]
     telemetryConsent: "no"
   editor:
@@ -18,12 +32,15 @@
   "exception-reporting":
     userId: "be9cbc29-3d6a-24fb-5a22-c4045d940a60"
   linter: {}
+  "linter-eslint":
+    fixOnSave: true
   "linter-jshint":
     jshintFileName: "~/.jshintrc"
   "linter-python":
     executablePath: "/usr/bin/pylama"
   "linter-swiftc": {}
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "livestyle-atom":
     analyzer:
       notify: false
@@ -37,6 +54,8 @@
     markerType: "dot"
   "spell-check": {}
   "tree-view":
-    hideVcsIgnoredFiles: true
+    hideIgnoredNames: true
   welcome:
     showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
