@@ -9,6 +9,7 @@
       "jshint"
       "linter-htmlhint"
       "linter-jshint"
+      "metrics"
     ]
     ignoredNames: [
       ".git"
@@ -30,7 +31,7 @@
     showInvisibles: true
     softWrap: true
   "exception-reporting":
-    userId: "be9cbc29-3d6a-24fb-5a22-c4045d940a60"
+    userId: "a4eacb57-e797-4834-8146-27fd185d056a"
   linter: {}
   "linter-eslint":
     fixOnSave: true
