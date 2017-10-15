@@ -43,4 +43,4 @@ Unless you use either use my Dotfiles or modify yours so they use the provided X
 
 ## Notable things
 
-I disabled the close, minimize and maximize buttons on gtk3 windows. If you need them reenable them by removeing `gtk-decoration-layout=menu:` inside [settings.ini](./.config/gtk-3.0/settings.ini)
+I disabled the close, minimize and maximize buttons on gtk3 windows. If you need them reenable them by removing `gtk-decoration-layout=menu:` inside [settings.ini](./.config/gtk-3.0/settings.ini)
