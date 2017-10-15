@@ -160,6 +160,5 @@ bar {
 
 #Startup Applications
 exec sh ~/.fehbg
-exec wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/1Password\ 4/Agile1pAgent.exe
 exec redshift
 exec nm-applet
