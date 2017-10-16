@@ -1,6 +1,4 @@
 #!/bin/bash
-brightness="$(xbacklight)"
-xbacklight -set 1
 scrot /tmp/ss.png && convert /tmp/ss.png -sample 10% -scale 1000% /tmp/ss-p.png && rm /tmp/ss.png
 i3lock -n -i /tmp/ss-p.png && rm /tmp/ss-p.png
-xbacklight -set $brightness
+

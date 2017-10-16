@@ -42,7 +42,7 @@ bindsym F11 exec xbacklight -dec 5
 bindsym F12 exec xbacklight -inc 5
 
 #Lock the Screen
-bindsym $mod+l exec lock
+bindsym $mod+l exec systemctl suspend
 
 # change focus
 bindsym $mod+j focus left
