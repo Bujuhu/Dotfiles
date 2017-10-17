@@ -1,0 +1,20 @@
+#!/bin/sh
+# Source
+
+FULL=${FULL-─}
+EMPTY=${EMPTY-}
+SIZE=${SIZE-15}
+
+perc=$1
+size=$2
+
+inc=$(printf %0.f $(echo "$perc * $size / 100" | bc))
+
+for v in $(seq 0 $(( size - 1 )))
+do
+	[ "$v" -le "$inc" ] \
+		&& out="${out}${FULL}" \
+		|| out="${out}${EMPTY}"
+done
+
+printf '%s' "$out"
