@@ -51,7 +51,6 @@
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
 
-
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
     # The geometry of the message window.
@@ -142,10 +141,10 @@
     browser = /usr/bin/firefox -new-tab
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders = /usr/share/icons/Paper/32x32/status/:/usr/share/icons/Paper/32x32/devices/
 
 [frame]
     width = 3
