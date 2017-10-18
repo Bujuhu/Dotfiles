@@ -39,7 +39,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec rofi -run-list-command -run-command "/bin/zsh -i -c '{cmd}'" -rnow -show run
 
 bindsym F1 exec volume mute
-bindsym F2 exec volume down 
+bindsym F2 exec volume down
 bindsym F3 exec volume up
 
 bindsym F11 exec backlight down
@@ -162,7 +162,14 @@ bar {
         status_command i3status
 }
 
+# Open Popups in floating Mode
+
+for_window [class="Pinentry"] floating enable
+
 #Startup Applications
 exec sh ~/.fehbg
 exec redshift
 exec nm-applet
+
+# Show popups in fullscreen mode
+popup_during_fullscreen smart
