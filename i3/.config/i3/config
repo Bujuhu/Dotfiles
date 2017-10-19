@@ -38,12 +38,19 @@ bindsym $mod+Shift+q kill
 # start Rofi (a program launcher)
 bindsym $mod+space exec rofi -run-list-command -run-command "/bin/zsh -i -c '{cmd}'" -rnow -show run
 
-bindsym F1 exec volume mute
-bindsym F2 exec volume down
-bindsym F3 exec volume up
+# Volume Controls
+bindsym XF86AudioMute exec volume mute
+bindsym XF86AudioLowerVolume exec volume down
+bindsym XF86AudioRaiseVolume exec volume up
 
-bindsym F11 exec backlight down
-bindsym F12 exec backlight up
+# Brightness Controls
+bindsym XF86MonBrightnessDown exec backlight down
+bindsym XF86MonBrightnessUp exec backlight up
+
+# Media Controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 #Lock the Screen
 bindsym $mod+l exec systemctl suspend
