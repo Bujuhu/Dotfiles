@@ -23,9 +23,14 @@
       "build"
     ]
     telemetryConsent: "no"
+    themes: [
+      "nord-atom-ui"
+      "nord-atom-syntax"
+    ]
   editor:
+    autoIndent: false
     fontFamily: "monospace"
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -40,8 +45,7 @@
   "linter-python":
     executablePath: "/usr/bin/pylama"
   "linter-swiftc": {}
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "livestyle-atom":
     analyzer:
       notify: false
@@ -51,6 +55,7 @@
     charHeight: 8
     charWidth: 3
     displayPluginsControls: false
+  "nord-atom-ui": {}
   pigments:
     markerType: "dot"
   "spell-check": {}
