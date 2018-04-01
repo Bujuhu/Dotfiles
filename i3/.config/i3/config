@@ -168,10 +168,43 @@ bindsym $mod+r mode "resize"
 for_window [class="Pinentry"] floating enable
 
 #Startup Applications
+exec compton -b --config ~/.config/compton.conf
 exec sh ~/.fehbg
-exec redshift
+exec redshift -r
 exec nm-applet
 exec polybar main
 
 # Show popups in fullscreen mode
 popup_during_fullscreen smart
+
+# Hide titlebar
+
+default_border pixel 2
+
+# Color configuration
+
+set_from_resource $color0 i3wm.color0 #2E3440
+set_from_resource $color1 i3wm.color1 #3B4252
+set_from_resource $color2 i3wm.color2 #434C5E
+set_from_resource $color3 i3wm.color3 #4C566A
+set_from_resource $color4 i3wm.color4 #D8DEE9
+set_from_resource $color5 i3wm.color5 #E5E9F0
+set_from_resource $color6 i3wm.color6 #ECEFF4
+set_from_resource $color7 i3wm.color7 #8FBCBB
+set_from_resource $color8 i3wm.color8 #88C0D0
+set_from_resource $color9 i3wm.color9 #81A1C1
+set_from_resource $color10 i3wm.color10 #5E81AC
+set_from_resource $color11 i3wm.color11 #BF616A
+set_from_resource $color12 i3wm.color12 #D08770
+set_from_resource $color13 i3wm.color13 #EBCB8B
+set_from_resource $color14 i3wm.color14 #A3BE8C
+set_from_resource $color15 i3wm.color15 #B48EAD
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $color9 $color9 $color0 $color15 $color9
+client.focused_inactive $color0 $color0 $color4 $color0 $color0
+client.unfocused        $color0 $color0 $color4 $color0 $color0
+client.urgent           $color11 $color11 $color4 $color11 $color11
+client.placeholder      $color0 $color0 $color4 $color0 $color0
+
+client.background       $color4

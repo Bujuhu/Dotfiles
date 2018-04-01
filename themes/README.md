@@ -23,6 +23,8 @@ Currently they affect the following applications:
 
 - **Rofi**
 - **URXVT**
+- **Dunst** (if you use my included script for generating a config file)
+- **i3**
 
 ## Notable things
 

@@ -148,7 +148,7 @@
 
 [frame]
     width = 3
-    color = "#FAB654"
+    color = "<% Dunst.color4 %>"
 
 [shortcuts]
 
@@ -172,18 +172,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#eeeeee"
-    foreground = "#707070"
+    background = "<% Dunst.background %>"
+    foreground = "<% Dunst.foreground %>"
     timeout = 10
 
 [urgency_normal]
-    background = "#eeeeee"
-    foreground = "#707070"
+    background = "<% Dunst.background %>"
+    foreground = "<% Dunst.foreground %>"
     timeout = 10
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
+    background = "<% Dunst.background %>"
+    foreground = "<% Dunst.color9 %>"
     timeout = 0
 
 
