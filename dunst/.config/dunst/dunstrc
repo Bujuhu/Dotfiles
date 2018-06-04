@@ -67,7 +67,7 @@
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
@@ -116,10 +116,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 10
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 12
 
     # Define a border for the separator.
     # possible values are:
@@ -144,7 +144,9 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Paper/32x32/status/:/usr/share/icons/Paper/32x32/devices/
+    icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/32x32/devices/
+
+     max_icon_size = 16
 
 [frame]
     width = 3
@@ -209,6 +211,12 @@
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
+
+[.status]
+  appname = .status
+  format = "%s %b"
+  new_icon= ""
+
 
 #[script-test]
 #    summary = "*script*"
