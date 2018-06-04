@@ -39,13 +39,13 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec rofi -run-list-command -run-command "/bin/zsh -i -c '{cmd}'" -rnow -show run
 
 # Volume Controls
-bindsym XF86AudioMute exec volume mute
-bindsym XF86AudioLowerVolume exec volume down
-bindsym XF86AudioRaiseVolume exec volume up
+bindsym XF86AudioMute exec .status vol mute
+bindsym XF86AudioLowerVolume exec .status vol down
+bindsym XF86AudioRaiseVolume exec .status vol up
 
 # Brightness Controls
-bindsym XF86MonBrightnessDown exec backlight down
-bindsym XF86MonBrightnessUp exec backlight up
+bindsym XF86MonBrightnessDown exec .status blg down
+bindsym XF86MonBrightnessUp exec .status blg up
 
 # Media Controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -53,7 +53,11 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Lock the Screen
-bindsym $mod+l exec systemctl suspend
+bindsym $mod+l exec ~/.bin/lock
+
+#Status
+bindsym $mod+q exec ~/.bin/.status main
+bindsym $mod+y exec ~/.bin/.status net
 
 # change focus
 bindsym $mod+j focus left
@@ -107,16 +111,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 1; exec ~/.bin/.status wsp
+bindsym $mod+2 workspace 2; exec ~/.bin/.status wsp
+bindsym $mod+3 workspace 3; exec ~/.bin/.status wsp
+bindsym $mod+4 workspace 4; exec ~/.bin/.status wsp
+bindsym $mod+5 workspace 5; exec ~/.bin/.status wsp
+bindsym $mod+6 workspace 6; exec ~/.bin/.status wsp
+bindsym $mod+7 workspace 7; exec ~/.bin/.status wsp
+bindsym $mod+8 workspace 8; exec ~/.bin/.status wsp
+bindsym $mod+9 workspace 9; exec ~/.bin/.status wsp
+bindsym $mod+0 workspace 10; exec ~/.bin/.status wsp
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -172,7 +176,6 @@ exec compton -b --config ~/.config/compton.conf
 exec sh ~/.fehbg
 exec redshift -r
 exec nm-applet
-exec polybar main
 
 # Show popups in fullscreen mode
 popup_during_fullscreen smart

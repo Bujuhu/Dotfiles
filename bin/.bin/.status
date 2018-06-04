@@ -1,0 +1,120 @@
+#!/bin/bash
+
+#Battery
+label_battery="<b>BAT</b>"
+
+#Workspace
+label_current_workspace="<b>WSP</b>"
+
+#Volume
+label_volume="<b>VOL</b>"
+
+#Backlight
+label_backlight="<b>BLG</b>"
+
+#Virtual Private Netzwork
+label_vpn="<b>VPN</b>"
+
+label_dhcp="<b>DHCP</b>"
+
+label_wireless="<b>W</b>"
+
+label_local_ip="<b>IP</b>"
+
+#Public IP
+label_public_ip="<b>P-IP</b>"
+
+function send {
+  dunstify -t 1000 -r 1234 -a .status -u normal "$@"
+}
+function get_battery {
+  echo " 100* $(cat /sys/class/power_supply/BAT0/charge_now)/$(cat /sys/class/power_supply/BAT0/charge_full_design)" | bc
+}
+function get_current_workspace {
+  i3-msg -t get_workspaces | jq -r 'map(select(.focused) | .name) | .[]'
+}
+
+function set_backlight {
+  case $2 in
+    up)
+  	 xbacklight -inc 5
+  	;;
+    down)
+      xbacklight -dec 5
+  	;;
+  esac
+}
+
+function set_volume {
+  case $2 in
+    up)
+  	 amixer -D pulse set Master on > /dev/null
+  	 amixer -D pulse sset Master 5%+ > /dev/null
+  	;;
+    down)
+  	 amixer -D pulse set Master on > /dev/null
+  	 amixer -D pulse sset Master 5%- > /dev/null
+  	;;
+    mute)
+  	 amixer -D pulse set Master 1+ toggle > /dev/null
+  	;;
+  esac
+}
+function get_backlight {
+  current_blg="$(xbacklight)"
+  echo "${current_blg/.*}"
+}
+function get_volume {
+  if amixer get Master | grep '%' | grep -oE '[^ ]+$' | grep off > /dev/null ; then
+    echo mute
+  else
+    amixer get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1
+  fi
+}
+function get_vpn {
+  nmcli -t c show --active | grep vpn | awk -F":" '{print $1} END { if (!NR) print "inactive" }'
+}
+function get_wireless_label {
+  nmcli -t c show --active | grep wireless | awk -F ":" '{print $1} END { if (!NR) print "inactive" }'
+}
+function get_essid {
+  iwgetid -r
+}
+function get_wireless_signal_strength {
+  echo " 100* $(iwconfig wlp58s0 | grep "Link Quality" | awk -F "=" '{print $2}' | awk '{print $1}')" | bc
+}
+#function get_dhcp {
+#  if [[ -e /var/run/dhclient*.pid ]]; then echo enabled else echo disabled; fi
+#}
+function get_local_ip {
+  ip -4 addr show wlp58s0 | grep 'inet' | awk '{print $2}'
+}
+function get_public_ip {
+  curl https://ipinfo.io/ip
+}
+
+case $1 in
+  send)
+    shift
+    send "$@"
+	;;
+  wsp)
+    send "$label_current_workspace $(get_current_workspace)"
+  ;;
+  blg)
+    set_backlight "$@"
+    send "$label_backlight $(get_backlight)"
+  ;;
+  vol)
+    set_volume "$@"
+    send "$label_volume $(get_volume)"
+  ;;
+  main)
+    send "$label_battery $(get_battery) <b>$(date +%R)</b>"
+  ;;
+  net)
+    send "$label_wireless $(get_essid) $(get_wireless_signal_strength)%
+$label_local_ip $(get_local_ip)
+$label_vpn $(get_vpn)"
+esac
+
