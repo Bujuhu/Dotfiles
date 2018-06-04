@@ -173,7 +173,7 @@ for_window [class="Pinentry"] floating enable
 
 #Startup Applications
 exec compton -b --config ~/.config/compton.conf
-exec sh ~/.fehbg
+exec feh --bg-fill --no-fehbg $WALLPAPER
 exec redshift -r
 exec nm-applet
 

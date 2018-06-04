@@ -1,4 +1,27 @@
-#!/bin/bash
-scrot /tmp/ss.png && convert /tmp/ss.png -sample 10% -scale 1000% /tmp/ss-p.png && rm /tmp/ss.png
-i3lock -n -i /tmp/ss-p.png && rm /tmp/ss-p.png
+#!/usr/bin/bash
+
+WALLPAPER=$HOME/.wallpapers/cavestory_$SW.png
+
+#Config is heavily inspired by betterlockscreen:
+# https://github.com/pavanjadhaw/betterlockscreen
+
+letterEnteredColor=d23c3dff
+letterRemovedColor=d23c3dff
+passwordCorrect=00000000
+passwordIncorrect=d23c3dff
+background=00000000
+foreground=ffffffff
+
+i3lock -n -t -i $WALLPAPER \
+		--timepos="110:h-80" \
+		--datepos="110:h-60" \
+		--clock --datestr "%d of %b, %Y" \
+		--insidecolor=$background --ringcolor=$foreground --line-uses-inside \
+		--keyhlcolor=$letterEnteredColor --bshlcolor=$letterRemovedColor --separatorcolor=$background \
+		--insidevercolor=$passwordCorrect --insidewrongcolor=$passwordIncorrect \
+		--ringvercolor=$foreground --ringwrongcolor=$foreground --indpos="x+230:h-80" \
+		--radius=30 --ring-width=8 --veriftext="" --wrongtext="" \
+		--verifcolor="$foreground" --timecolor="$foreground" --datecolor="$foreground" \
+        --noinputtext="" \
+		--force-clock
 
