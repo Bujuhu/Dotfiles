@@ -1,5 +1,5 @@
 #!/bin/zsh
-PATH=$HOME/.gem/ruby/2.3.0/bin:/$HOME/.bin:/$HOME/.bin/application_shortcuts:$PATH
+PATH=$(ruby -e 'print Gem.user_dir')/bin:~/.bin:/$HOME/.bin/application_shortcuts:$PATH
 
 #Load oh-my-zsh configuration
 [ -f "/$HOME/.config/zsh/oh-my.zsh" ] && source "/$HOME/.config/zsh/oh-my.zsh"
