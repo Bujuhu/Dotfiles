@@ -1,0 +1,31 @@
+ #!/bin/bash
+
+source .status
+
+active_connection="$(get_vpn)"
+
+[[ "$active_connection" != "inactive" ]] && disable_connection_string="Disable: $(get_vpn)\n"
+
+function connection {
+ echo x;
+}
+function menu {
+  connections="$disable_connection_string$(nmcli -t --fields name,type,active c show| grep vpn | grep no | awk -F":" '{print $1}')"
+  result="$(echo -e "$connections" | dmenu -p "VPN")"
+
+  [[ -n "$result" && -n "$disable_connection_string" ]] && nmcli c down "$active_connection"
+  [[ -n "$result" && "$result" != "$disable_connection_string" ]] && nmcli c up "$result"
+}
+case $1 in
+  up)
+    nmcli c up Netherlands
+	;;
+  down)
+    nmcli c down "$active_connection"
+  ;;
+  toggle)
+    [[ -n "$disable_connection_string" ]] && nmcli c down "$active_connection" || nmcli c up Netherlands
+  ;;
+  *)
+    menu
+esac
