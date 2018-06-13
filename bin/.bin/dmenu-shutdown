@@ -1,0 +1,19 @@
+#!/bin/bash
+
+result="$(echo -e "Shutdown\nReboot\nLogout\nSuspend" | dmenu)"
+
+case $result in
+  Shutdown)
+    systemctl shutdown
+	;;
+  Reboot)
+    systemctl reboot
+  ;;
+  Logout)
+    i3-msg exit
+  ;;
+  Suspend)
+    systemctl Suspend
+  ;;
+  *)
+esac
