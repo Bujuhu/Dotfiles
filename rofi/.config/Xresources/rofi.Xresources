@@ -9,9 +9,11 @@ rofi.color-normal: argb:00000000, fg, argb:00000000, bg_highlight, fg_highlight
 rofi.show-icons:            false
 rofi.modi:                  drun,run,window,ssh
 rofi.lines:                 7
+rofi.fixed-num-lines:       false
 rofi.line-padding:          10
 rofi.matching:              fuzzy
 rofi.bw:                    2
+rofi.yoffset:               -200
 rofi.padding:               0
 rofi.separator-style:       none
 rofi.hide-scrollbar:        true
