@@ -37,6 +37,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Enable the Keyring
+dbus-update-activation-environment --systemd DISPLAY
+eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
+export SSH_AUTH_SOCK
+
 #UI specific envireoment variables
 export QT_STYLE_OVERRIDE=GTK+
 exec $WM
