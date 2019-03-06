@@ -1,7 +1,7 @@
 Xcursor.theme:adwaita
 Xcursor.size:20
 
-#define bg_transparent_rgba rgba:2E00/3400/4000/eeee
+#define bg_transparent_rgba rgba:2E00/3400/4000/fafa
 #define bg_transparent_argb argb:ee2E3440
 #define bg nord0
 #define fg nord4
