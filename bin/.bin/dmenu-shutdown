@@ -1,10 +1,10 @@
 #!/bin/bash
 
-result="$(echo -e "Shutdown\nReboot\nLogout\nSuspend" | dmenu)"
+result="$(echo -e "Poweroff\nReboot\nLogout\nSuspend" | dmenu)"
 
 case $result in
-  Shutdown)
-    systemctl shutdown
+  Poweroff)
+    systemctl poweroff
 	;;
   Reboot)
     systemctl reboot
