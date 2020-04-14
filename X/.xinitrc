@@ -44,4 +44,7 @@ export SSH_AUTH_SOCK
 
 #UI specific envireoment variables
 export QT_STYLE_OVERRIDE=GTK+
+
+xkbcomp ~/.xkbcomp.xkb $DISPLAY
+
 exec $WM
