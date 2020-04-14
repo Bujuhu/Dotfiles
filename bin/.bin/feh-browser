@@ -1,0 +1,3 @@
+#!/bin/bash
+
+feh --scale-down --image-bg "$(xgetres feh.background)" --start-at ./$(basename $1) .
