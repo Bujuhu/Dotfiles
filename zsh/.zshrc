@@ -1,5 +1,5 @@
 #!/bin/zsh
-PATH=$(ruby -e 'print Gem.user_dir')/bin:~/.bin:/$HOME/.bin/application_shortcuts:~/.dotnet/tools:$PATH
+PATH=$(ruby -e 'print Gem.user_dir')/bin:~/.bin:/$HOME/.bin/lib:/$HOME/.bin/application_shortcuts:~/.dotnet/tools:$PATH:$HOME/.local/bin
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export DOTNET_ROOT=/opt/dotnet/
 export MSBuildSDKsPath=/opt/dotnet/sdk/$(dotnet --version)/Sdks
