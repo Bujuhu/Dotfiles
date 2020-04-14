@@ -5,7 +5,7 @@ URxvt.url-launcher: xdg-open
 URxvt.matcher.button: 1
 
 URxvt.scrollBar: false
-URxvt.font: xft:Sauce Code Powerline:pixelsize=15:antialias=true
+URxvt.font: xft:monospace:pixelsize=15:antialias=true
 URxvt.depth: 32
 URxvt.background: bg_transparent_rgba
 URxvt.internalBorder:  8
