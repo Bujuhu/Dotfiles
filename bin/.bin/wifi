@@ -1,0 +1,22 @@
+#!/bin/bash
+
+disconnect_string="Disabe Wifi"
+connect_string="Enable Wifi"
+if [[ $(nmcli radio wifi) == "disabled" ]]; then
+  options="$connect_string"
+else
+  nmcli dev wifi rescan
+  options="$disconnect_string\n$(nmcli -t -fields ssid,in-use dev wifi list | grep -v "*" | awk -F":" '{print $1}')"
+fi
+
+result="$(echo -e "$options" | rofi -dmenu -p "WIFI")"
+
+if [[ -n "$result" ]]; then
+  if [[ "$result" == "$connect_string" ]]; then
+    nmcli radio wifi on
+  elif [[ "$result" == "$disconnect_string" ]]; then
+    nmcli radio wifi off
+  else
+    nmcli dev wifi connect "$result"
+  fi
+fi
