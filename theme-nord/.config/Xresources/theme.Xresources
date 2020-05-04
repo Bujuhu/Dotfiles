@@ -41,6 +41,7 @@ Xcursor.size:20
 *fading: 35
 *fadeColor: nord3
 
+*.alpha: 0.9
 *.color0: nord1
 *.color1: nord11
 *.color2: nord14
@@ -57,3 +58,5 @@ Xcursor.size:20
 *.color13: nord15
 *.color14: nord7
 *.color15: nord6
+
+*.font: monospace:pixelsize=16:antialias=true
