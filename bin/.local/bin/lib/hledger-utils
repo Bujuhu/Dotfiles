@@ -1,0 +1,33 @@
+#! /bin/sh
+
+. text-utils
+
+#Gets current Market Value for 1 Cryptocurrency Unit in Euro
+getValueOfCrypto() {
+    curl -s "https://www.bitstamp.net/api/v2/ticker/$1eur/" | jq -r '.last' | sed 's/\./,/g'
+}
+
+#Gets current Market Value for 1 Stock Symbol (WKN or ISIN) Unit in Euro
+getValueOfSymbol() {
+     curl -s "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=$1&interval=5min&apikey=$ALPHAVANTAGE_API_KEY" | jq -r '."Global Quote"."05. price"' | sed 's/\./,/g'
+}
+
+# Only print entries of the current year and month
+filterByMonth() {
+    awk -v pat="$2.$1" -F "$3" '$3 ~ pat'
+}
+
+# Creates a plain text accounting file
+makeJournal() {
+    hledger -p "$2/$3" -f csv:- --rules-file "$1" print
+}
+
+# ------------------------------
+# Credit Institute specfic Rules
+# ------------------------------
+
+#Transform Bawag Psk Bank Account Statement File to valid CSV
+transformPsk() {
+    delimiter=";"
+    filterByMonth "$1" "$2" $delimiter | ISOtoUTF8 | removeCarrigeReturn | replaceCsvDelimiter $delimiter | makeJournal ~/hledger/psk.csv.rules "$1" "$2" print   
+}

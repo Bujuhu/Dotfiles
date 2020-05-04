@@ -25,10 +25,10 @@ label_local_ip="<b>IP</b>"
 label_public_ip="<b>P-IP</b>"
 
 function send {
-  dunstify -t 1000 -r 1234 -a .status -u normal "$@"
+  dunstify -t 1000 -r 1234 -a .status -u normal "" "$@"
 }
 function get_battery {
-  echo " 100* $(cat /sys/class/power_supply/BAT0/charge_now)/$(cat /sys/class/power_supply/BAT0/charge_full_design)" | bc
+  upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{ print $2 }'
 }
 function get_current_workspace {
   i3-msg -t get_workspaces | jq -r 'map(select(.focused) | .name) | .[]'
@@ -42,6 +42,12 @@ function set_backlight {
     down)
       xbacklight -dec 5
   	;;
+    off)
+      xbacklight -set 0
+    ;;
+    middle)
+      xbacklight -set 70
+
   esac
 }
 

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Check if User is root
+if ! [ $(id -u) = 0 ]; then
+   echo "The script need to be run as root." >&2
+   exit 1
+fi
+
+if [ $SUDO_USER ]; then
+    real_user=$SUDO_USER
+else
+    real_user=$(whoami)
+fi
+
+real_home=$(getent passwd bujuhu | cut -d: -f6)
+host=$1
+share=$2
+
+cd /mnt || exit
+
+[ ! -d "$host" ] && mkdir $host
+
+cd $host || exit
+
+[ ! -d "$share" ] && mkdir $share
+
+mount -t cifs //$host/$share /mnt/$host/$share -o credentials=/$real_home/.config/credentials/$host.credentials,uid=$real_user,workgroup=workgroup,ip=$host,iocharset=utf8

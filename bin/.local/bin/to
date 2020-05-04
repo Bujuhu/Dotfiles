@@ -1,0 +1,5 @@
+#!/bin/sh
+
+TIMELOG=~/hledger/work.timelog
+
+echo o $(date '+%Y-%m-%d %H:%M:%S') $* >>$TIMELOG

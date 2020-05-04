@@ -1,4 +1,5 @@
 *.local
+!/bin/.local/
 
 /atom/.atom/*
 !/atom/.atom/config.cson
