@@ -27,3 +27,11 @@ alias ed.="$VISUAL $HOME/Dotfiles/"
 
 #adding applications outside of PATH
 alias racethesun="cd /opt/racethesun && ./RaceTheSun.x86"
+
+#adding flatpak applications
+alias teamspeak3="flatpak run com.teamspeak.TeamSpeak"
+alias steam="flatpak run com.valvesoftware.Steam"
+alias dbeaver="flatpak run io.dbeaver.DBeaverCommunity"
+
+#Home Folder redirections for applications that do not comply with xdg base directory spec
+#alias teamspeak3="HOME=$HOME/.local/legacy-app-data teamspeak3"
