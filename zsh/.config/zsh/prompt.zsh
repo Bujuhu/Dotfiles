@@ -1,7 +1,13 @@
 #!/bin/zsh
 
-PROMPT="%m  %E  %/  %? "
+precmd() { vcs_info }
 
-function git {
+#Enable Promt Substitution
+setopt PROMPT_SUBST
 
-}
+#VCS Info pport
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats '%b'
+
+PROMPT='%B%F{green}%99~%f%b %B%F{yellow}${vcs_info_msg_0_}%f%b '
+RPROMPT='%(?..%F{red}%?)%f'
