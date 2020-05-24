@@ -59,11 +59,11 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Lock the Screen
-bindsym $mod+l exec ~/.bin/lock
+bindsym $mod+l exec lock
 
 #Status
-bindsym $mod+q exec ~/.bin/.status main
-bindsym $mod+y exec ~/.bin/.status net
+bindsym $mod+q exec .status main
+bindsym $mod+y exec .status net
 
 # change focus
 bindsym $mod+j focus left
@@ -180,7 +180,7 @@ bindsym $mod+r mode "resize"
 for_window [class="Pinentry"] floating enable
 
 #Startup Applications
-exec compton -b --config ~/.config/compton.conf
+exec picom -b --config ~/.config/compton.conf
 exec xss-lock -- lock
 exec feh --bg-fill --no-fehbg $WALLPAPER
 exec redshift -l 48:16 -r
