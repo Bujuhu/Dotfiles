@@ -32,6 +32,7 @@ alias racethesun="cd /opt/racethesun && ./RaceTheSun.x86"
 alias teamspeak3="flatpak run com.teamspeak.TeamSpeak"
 alias steam="flatpak run com.valvesoftware.Steam"
 alias dbeaver="flatpak run io.dbeaver.DBeaverCommunity"
+alias minecraft="flatpak run com.mojang.Minecraft"
 
-#Home Folder redirections for applications that do not comply with xdg base directory spec
-#alias teamspeak3="HOME=$HOME/.local/legacy-app-data teamspeak3"
+#Aliases for Applications to ensure they comply to the XDG Base Directory Spec
+alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
