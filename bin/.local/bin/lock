@@ -12,7 +12,7 @@ passwordIncorrect=d23c3dff
 background=00000000
 foreground=ffffffff
 
-i3lock -n -t -i $WALLPAPER \
+i3lock -n -t -i ~/.var/wallpapers/cavestory_1080.png\
 		--timepos="110:h-80" \
 		--datepos="110:h-60" \
 		--clock --datestr "%d of %b, %Y" \
