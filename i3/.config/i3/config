@@ -40,18 +40,18 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec rofi -run-list-command -run-command "/bin/zsh -i -c '{cmd}'" -rnow -show run
 
 # Volume Controls
-bindsym XF86AudioMute exec .status vol mute
-bindsym XF86AudioLowerVolume exec .status vol down
-bindsym XF86AudioRaiseVolume exec .status vol up
+bindsym XF86AudioMute exec ~/.local/bin/.status vol mute
+bindsym XF86AudioLowerVolume exec ~/.local/bin/.status vol down
+bindsym XF86AudioRaiseVolume exec ~/.local/bin/.status vol up
 bindsym $mod+XF86AudioMute exec pavucontrol
 bindsym $mod+XF86AudioLowerVolume exec pavucontrol
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
 
 # Brightness Controls
-bindsym XF86MonBrightnessDown exec .status blg down
-bindsym XF86MonBrightnessUp exec .status blg up
-bindsym $mod+XF86MonBrightnessDown exec .status blg off
-bindsym $mod+XF86MonBrightnessUp exec .status blg middle
+bindsym XF86MonBrightnessDown exec ~/.local/bin/.status blg down
+bindsym XF86MonBrightnessUp exec ~/.local/bin/.status blg up
+bindsym $mod+XF86MonBrightnessDown exec ~/.local/bin/.status blg off
+bindsym $mod+XF86MonBrightnessUp exec ~/.local/bin/.status blg middle
 
 # Media Controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -59,11 +59,11 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Lock the Screen
-bindsym $mod+l exec lock
+bindsym $mod+l exec ~/.local/bin/lock
 
 #Status
-bindsym $mod+q exec .status main
-bindsym $mod+y exec .status net
+bindsym $mod+q exec ~/.local/bin/.status main
+bindsym $mod+y exec ~/.local/bin/.status net
 
 # change focus
 bindsym $mod+j focus left
@@ -117,16 +117,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1; exec ~/.bin/.status wsp
-bindsym $mod+2 workspace 2; exec ~/.bin/.status wsp
-bindsym $mod+3 workspace 3; exec ~/.bin/.status wsp
-bindsym $mod+4 workspace 4; exec ~/.bin/.status wsp
-bindsym $mod+5 workspace 5; exec ~/.bin/.status wsp
-bindsym $mod+6 workspace 6; exec ~/.bin/.status wsp
-bindsym $mod+7 workspace 7; exec ~/.bin/.status wsp
-bindsym $mod+8 workspace 8; exec ~/.bin/.status wsp
-bindsym $mod+9 workspace 9; exec ~/.bin/.status wsp
-bindsym $mod+0 workspace 10; exec ~/.bin/.status wsp
+bindsym $mod+1 workspace 1; exec ~/.local/bin/.status wsp
+bindsym $mod+2 workspace 2; exec ~/.local/bin/.status wsp
+bindsym $mod+3 workspace 3; exec ~/.local/bin/.status wsp
+bindsym $mod+4 workspace 4; exec ~/.local/bin/.status wsp
+bindsym $mod+5 workspace 5; exec ~/.local/bin/.status wsp
+bindsym $mod+6 workspace 6; exec ~/.local/bin/.status wsp
+bindsym $mod+7 workspace 7; exec ~/.local/bin/.status wsp
+bindsym $mod+8 workspace 8; exec ~/.local/bin/.status wsp
+bindsym $mod+9 workspace 9; exec ~/.local/bin/.status wsp
+bindsym $mod+0 workspace 10; exec ~/.local/bin/.status wsp
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -149,7 +149,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec dmenu-shutdown
+bindsym $mod+Shift+e exec ~/.local/bin/dmenu-shutdown
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -180,10 +180,6 @@ bindsym $mod+r mode "resize"
 for_window [class="Pinentry"] floating enable
 
 #Startup Applications
-exec picom -b --config ~/.config/compton.conf
-exec xss-lock -- lock
-exec feh --bg-fill --no-fehbg $WALLPAPER
-exec redshift -l 48:16 -r
 exec nm-applet
 
 # Show popups in fullscreen mode
