@@ -1,8 +1,10 @@
 #!/bin/sh
 
+xConfigDir=$XDG_CONFIG_HOME/X11
 userresourcesDir=$HOME/.config/Xresources
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$xConfigDir/.Xresources
+usermodmap=$xConfigDir/Xmodmap
+xkbcomp=$xConfigDir/xkbcomp.xkb
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -45,6 +47,11 @@ export SSH_AUTH_SOCK
 #UI specific envireoment variables
 export QT_STYLE_OVERRIDE=GTK+
 
-xkbcomp ~/.xkbcomp.xkb $DISPLAY
+xkbcomp $xkbcomp $DISPLAY &
+#Startup applications
+picom -b --config ~/.config/picom.conf &
+xss-lock -- lock &
+feh --bg-fill --no-fehbg $HOME/.var/wallpapers/cavestory_1080.png
+redshift -l 48:16 -r &
 
-exec $WM
+dwm 2> ~/.dwm.log 
