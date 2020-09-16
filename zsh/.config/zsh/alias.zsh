@@ -1,8 +1,15 @@
 #!/bin/zsh
+command-e() { command -v $1 > /dev/null }
 
 # Command substituions
 command-e git &&
 alias gti='git'
+
+alias ll='ls -la'
+alias sc='systemctl'
+alias jc='journalctl'
+alias dk='docker'
+alias dkc='docker-compose'
 
 command-e npm &&
 alias npm-exec='PATH=$(npm bin):$PATH'

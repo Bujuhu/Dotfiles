@@ -9,14 +9,17 @@ HISTFILE=$XDG_CACHE_HOME/zsh/history
 
 setopt autocd		# Automatically cd into typed directory.
 setopt NO_CASE_GLOB # Case Insensitive Globbing
-setopt CORRECT # Make Autocorrect suggestions
-setopt CORRECT_ALL # Make Autocorrect suggestions
+#setopt CORRECT # Make Autocorrect suggestions
+#setopt CORRECT_ALL # Make Autocorrect suggestions
 
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+for dump in ~/.$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION(N.mh+24); do
+  compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+done
+compinit -C
 _comp_options+=(globdots)		# Include hidden files.
 
 #Load aliases
