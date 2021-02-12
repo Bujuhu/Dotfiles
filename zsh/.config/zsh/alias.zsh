@@ -1,15 +1,35 @@
 #!/bin/zsh
 command-e() { command -v $1 > /dev/null }
 
-# Command substituions
-command-e git &&
-alias gti='git'
-
 alias ll='ls -la'
-alias sc='systemctl'
-alias jc='journalctl'
-alias dk='docker'
-alias dkc='docker-compose'
+
+#SystemD
+alias sysl='systemctl'
+alias joul='journalctl'
+alias netl='networkctl'
+alias tdl='timedatectl'
+
+#Docker
+alias dkr='docker'
+alias dkrc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcub='docker-compse up --build -d'
+alias dcd='docker-compose down'
+
+#Git
+alias gti='git'
+alias gis='git status'
+alias gia="git add $@"
+alias gic="git commit $@"
+alias gicm="git commit -m $@"
+alias gip="git push $@"
+alias giu="gia . && gic $@ && gip" #Git unified
+alias gnb="git checkout -b $@" #Git new Branch
+alias gsb="git checkout $@" #Git switch Branch
+alias gpb="git branch" #Git print branch
+alias gil="git log"
+
+alias enable='sudo -E $SHELL'
 
 command-e npm &&
 alias npm-exec='PATH=$(npm bin):$PATH'
@@ -43,3 +63,11 @@ alias minecraft="flatpak run com.mojang.Minecraft"
 
 #Aliases for Applications to ensure they comply to the XDG Base Directory Spec
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
+
+
+alias printscripts="find ~/.local/bin -maxdepth 1 -not -type d"
+alias printaliases="grep alias < ~/.config/zsh/alias.zsh"
+
+
+# Command substituions
+
