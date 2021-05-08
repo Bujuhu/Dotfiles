@@ -32,6 +32,13 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
 
+#XRDM
+export XRDM_DIR=$XDG_CONFIG_HOME/X11
+export XRDM_FONT_DIR=$XRDM_DIR/fonts
+export XRDM_COLOR_DIR=$XRDM_DIR/colors
+export XRDM_PRESET_DIR=$XRDM_DIR/presets
+export XRDM_PROGRAM_DIR=$XRDM_DIR/programs
+
 #Setting default editor
 export EDITOR=editor
 export VISUAL=editor

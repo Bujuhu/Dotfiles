@@ -29,7 +29,7 @@ alias gsb="git checkout $@" #Git switch Branch
 alias gpb="git branch" #Git print branch
 alias gil="git log"
 
-alias enable='sudo -E $SHELL'
+alias enable='su -c $SHELL'
 
 command-e npm &&
 alias npm-exec='PATH=$(npm bin):$PATH'
@@ -71,3 +71,11 @@ alias printaliases="grep alias < ~/.config/zsh/alias.zsh"
 
 # Command substituions
 
+
+
+# Keymaps
+alias printkeymap="sed -n '47,57p' ~/qmk_firmware/keyboards/planck/keymaps/js-default/keymap.c "
+alias printkeymapl="sed -n '100,110p' ~/qmk_firmware/keyboards/planck/keymaps/js-default/keymap.c "
+alias printkeymapr="sed -n '118,128p' ~/qmk_firmware/keyboards/planck/keymaps/js-default/keymap.c "
+alias printkeymapa="sed -n '155,166p' ~/qmk_firmware/keyboards/planck/keymaps/js-default/keymap.c "
+alias printkeymapf="sed -n '173,184p' ~/qmk_firmware/keyboards/planck/keymaps/js-default/keymap.c "
