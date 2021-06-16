@@ -10,11 +10,16 @@ alias netl='networkctl'
 alias tdl='timedatectl'
 
 #Docker
-alias dkr='docker'
-alias dkrc='docker-compose'
-alias dcu='docker-compose up -d'
-alias dcub='docker-compse up --build -d'
-alias dcd='docker-compose down'
+alias ds="sudo systemctl start docker"
+alias dkr="docker $@"
+alias db="docker build $@"
+alias db="docker tag $@"
+alias db="docker logs $@"
+alias dps="docker ps $@"
+alias dkrc="docker-compose $@"
+alias dcu="docker-compose up -d"
+alias dcub="docker-compse up --build -d $@"
+alias dcd="docker-compose down $@"
 
 #Git
 alias gti='git'
@@ -66,11 +71,22 @@ alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 
 
 alias printscripts="find ~/.local/bin -maxdepth 1 -not -type d"
-alias printaliases="grep alias < ~/.config/zsh/alias.zsh"
+alias printaliases="< ~/.config/zsh/alias.zsh"
 
 
-# Command substituions
+# Quick Edits
 
+alias vibspwm="$EDITOR ~/Dotfiles/bspwm/.config/bspwm/bspwmrc"
+alias visxhkd="$EDITOR ~/Dotfiles/sxhkd/.config/sxhkd/sxhkdrc"
+
+## Keyboard Keymaps
+
+## Zsh
+alias vialias="$EDITOR ~/Dotfiles/zsh/.config/zsh/alias.zsh"
+alias vienv="$EDITOR ~/Dotfiles/zsh/.config/zsh/environment.zsh"
+alias virc="$EDITOR ~/Dotfiles/zsh/.config/zsh/.zshrc"
+alias vienvl="$EDITOR ~/Dotfiles/zsh/.config/zsh/environment.zsh.local"
+alias vissh="$EDITOR ~/Dotfiles/ssh/.ssh/config"
 
 
 # Keymaps

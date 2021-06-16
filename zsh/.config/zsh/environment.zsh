@@ -40,7 +40,7 @@ export XRDM_PRESET_DIR=$XRDM_DIR/presets
 export XRDM_PROGRAM_DIR=$XRDM_DIR/programs
 
 #Setting default editor
-export EDITOR=editor
+export EDITOR=vim
 export VISUAL=editor
 
 #Expoting Partial Path here to ensure that ruby is not called evrey time a new shell session is opened
