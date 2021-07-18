@@ -1,10 +1,4 @@
-#include "theme.Xresources"
-
 rofi.font: Source Code Pro 15
-
-rofi.color-enabled: true
-rofi.color-window: bg_transparent_argb, border_active, argb:00000000
-rofi.color-normal: argb:00000000, fg, argb:00000000, bg_highlight, fg_highlight
 
 rofi.show-icons:            false
 rofi.modi:                  drun,run,window,ssh
