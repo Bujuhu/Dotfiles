@@ -1,5 +1,5 @@
 #!/bin/zsh
-command-e() { command -v $1 > /dev/null }
+alias command-e="command -v $1 > /dev/null"
 
 alias ll='ls -la'
 

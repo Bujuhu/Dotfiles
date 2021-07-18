@@ -1,4 +1,7 @@
 #!/build/zsh
+
+alias command-e="command -v $1 > /dev/null"
+
 # Setting XDG Base Directories
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -7,6 +10,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 # Dotnet Core Options
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export DOTNET_ROOT=/opt/dotnet/
+command-e dotnet &&
 export MSBuildSDKsPath=/opt/dotnet/sdk/$(dotnet --version)/Sdks
 
 #Adding XDG Directory Support to Applications
@@ -44,6 +48,7 @@ export EDITOR=vim
 export VISUAL=editor
 
 #Expoting Partial Path here to ensure that ruby is not called evrey time a new shell session is opened
+command-e ruby &&
 export PATH_ENV=$(ruby -e 'print Gem.user_dir')/bin:$HOME/.local/bin:$HOME/.local/bin/lib:$HOME/.local/bin/application_shortcuts:~/.dotnet/tools
 
 #Loading local environemnt variables
