@@ -28,6 +28,7 @@ if [ -d "$userresourcesDir" ] ; then
  done
  unset f
 fi
+command -v xrdm > /dev/null && xrdm color nord && xrdm program rofi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
@@ -39,19 +40,23 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Enable the Keyring
-dbus-update-activation-environment --systemd DISPLAY
-eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
-export SSH_AUTH_SOCK
+
 
 #UI specific envireoment variables
 export QT_STYLE_OVERRIDE=GTK+
 
+#Load Keyboard layout (remap Caps lock to hyper key)
 xkbcomp $xkbcomp $DISPLAY &
-#Startup applications
-picom -b --config ~/.config/picom.conf &
-xss-lock -- lock &
-feh --bg-fill --no-fehbg $HOME/.var/wallpapers/cavestory_1080.png
-redshift -l 48:16 -r &
 
-dwm 2> ~/.dwm.log 
+#Load Window compositor
+picom -b --config ~/.config/picom.conf &
+
+#Enable the Lockscreen
+xss-lock -- lock &
+
+#Set Wallpaper
+feh --bg-fill --no-fehbg "$XDG_DATA_HOME/wallpapers/cavestory.png"
+#Start Apps
+redshift -l 48:16 -r &
+#Start Window Manager
+bspwm

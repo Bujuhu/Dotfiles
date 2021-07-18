@@ -1,0 +1,75 @@
+super + Return
+	st
+super + space
+	rofi -show run
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,0}'
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+
+super + ctrl + e
+	~/.local/bin/dmenu-shutdown
+super + shift + e
+	pkill -USR1 -x sxhkd
+
+super + f
+	bspc node --state '~fullscreen'
+ 
+super + alt + f
+	bspc node --state '~floating'
+ 
+super + {_,shift + } s
+	bspc node -s {prev, next}.window --follow
+
+super + shift + s 
+	pkill -USR1 -x sxhkd
+
+super + e
+	dmenuunicode
+
+super + {_,shift + } Tab
+	bspc node -f {next, prev}
+
+super + plus
+	bspc node -r +5
+
+super + {q, a}
+	~/.local/bin/.status {main, net}
+
+super + shift + {k,l,r,a,f}
+	st -g 92x13 -c keymap-preview zsh -i -c "printkeymap{ ,l,r,a,f}; read -k"
+
+XF86AudioMute
+	pamixer -t; .status vol
+
+XF86AudioRaiseVolume
+	pamixer --allow-boost -i 3; .status vol
+
+XF86AudioLowerVolume
+	pamixer --allow-boost -d 3; .status vol
+
+XF86MonBrightnessUp
+	xbacklight -inc 5; .status blg
+
+XF86MonBrightnessDown	
+	xbacklight -dec 5; .status blg
+
+XF86AudioPrev
+	playerctl prev
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPause
+	playerctl pause
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86Search
+	rofi -show run
