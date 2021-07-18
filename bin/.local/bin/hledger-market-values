@@ -1,6 +1,0 @@
-#!/bin/bash
-DATE="$(date +%Y/%m/%d)"
-source get-market-value-of
-echo P "$DATE" BTC € "$(getValueOfCrypto btc)"
-echo P "$DATE" ETH € "$(getValueOfCrypto eth)"
-echo P "$DATE" ETF_ACWI "€ $(getValueOfSymbol XMAW.F)"

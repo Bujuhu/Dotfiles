@@ -1,4 +1,0 @@
-#!/bin/sh
-. hledger-utils
-
-transformPsk "$1" "$2"
