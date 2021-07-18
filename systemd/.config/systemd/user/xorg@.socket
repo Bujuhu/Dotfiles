@@ -1,0 +1,5 @@
+[Unit]
+Description=Xorg server at display %i
+
+[Socket]
+ListenStream=/tmp/.x11-unix/X%i 
