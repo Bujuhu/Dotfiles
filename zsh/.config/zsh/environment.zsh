@@ -48,8 +48,9 @@ export EDITOR=vim
 export VISUAL=editor
 
 #Expoting Partial Path here to ensure that ruby is not called evrey time a new shell session is opened
+export PATH_ENV=$HOME/.local/bin:$HOME/.local/bin/lib:$HOME/.local/bin/application_shortcuts:~/.dotnet/tools
 command-e ruby &&
-export PATH_ENV=$(ruby -e 'print Gem.user_dir')/bin:$HOME/.local/bin:$HOME/.local/bin/lib:$HOME/.local/bin/application_shortcuts:~/.dotnet/tools
+export PATH_ENV=$(ruby -e 'print Gem.user_dir')/bin:$PATH_ENV
 
 #Loading local environemnt variables
 [ -f "/$XDG_CONFIG_HOME/zsh/environment.zsh.local" ] && source "/$XDG_CONFIG_HOME/zsh/environment.zsh.local"
