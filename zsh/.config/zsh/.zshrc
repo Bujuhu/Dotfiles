@@ -26,7 +26,7 @@ _comp_options+=(globdots)		# Include hidden files.
 #Load aliases
 [ -f "/$XDG_CONFIG_HOME/zsh/alias.zsh" ] && source "/$XDG_CONFIG_HOME/zsh/alias.zsh"
 #Load environment
-#[ -f "/$XDG_CONFIG_HOME/zsh/environment.zsh" ] && source "/$XDG_CONFIG_HOME/zsh/environment.zsh"
+[ -f "/$XDG_CONFIG_HOME/zsh/environment.zsh" ] && source "/$XDG_CONFIG_HOME/zsh/environment.zsh"
 [ -f "/$XDG_CONFIG_HOME/zsh/environment.zsh.local" ] && source "/$XDG_CONFIG_HOME/zsh/environment.zsh.local"
 #Load Prompt
 [ -f "/$XDG_CONFIG_HOME/zsh/prompt.zsh" ] && source "/$XDG_CONFIG_HOME/zsh/prompt.zsh"
