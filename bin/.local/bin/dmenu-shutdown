@@ -1,6 +1,6 @@
 #!/bin/bash
 
-result="$(echo -e "Poweroff\nReboot\nLogout\nSuspend" | dmenu)"
+result="$(echo -e "Poweroff\nReboot\nLogout\nReload\nSuspend" | dmenu)"
 
 case $result in
   Poweroff)
@@ -10,7 +10,10 @@ case $result in
     systemctl reboot
   ;;
   Logout)
-    i3-msg exit
+    bspc quit
+  ;;
+  Reload)
+    pkill -USR1 -x sxhkd
   ;;
   Suspend)
     systemctl Suspend

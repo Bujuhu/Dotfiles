@@ -112,7 +112,6 @@ case $1 in
     send "$label_backlight $(get_backlight)"
   ;;
   vol)
-    set_volume "$@"
     send "$label_volume $(get_volume)"
   ;;
   main)
