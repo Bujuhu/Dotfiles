@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/bujuhu/qmk_firmware/keyboards/dz60/keymaps/60_ansi_arrow_fkeys'
+let g:netrw_dirhist_6='/home/bujuhu/qmk_firmware/keyboards/dz60/keymaps/js-tofu'
+let g:netrw_dirhist_5='/home/bujuhu/qmk_firmware/keyboards/dz60/keymaps/default'
+let g:netrw_dirhist_4='/etc/udev/rules.d'
+let g:netrw_dirhist_3='/home/bujuhu/Dotfiles/bin/.local/bin'
+let g:netrw_dirhist_2='/home/bujuhu/Dotfiles/bin/.local'
+let g:netrw_dirhist_1='/home/bujuhu/Dotfiles/bin'
+let g:netrw_dirhist_0='/home/bujuhu/Dotfiles'
+let g:netrw_dirhist_9='/home/bujuhu/Dotfiles/larbs/.local/bin'
+let g:netrw_dirhist_8='/home/bujuhu/Dotfiles/larbs/.local'
