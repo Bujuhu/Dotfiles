@@ -18,8 +18,9 @@ alias db="docker logs $@"
 alias dps="docker ps $@"
 alias dkrc="docker-compose $@"
 alias dcu="docker-compose up -d"
-alias dcub="docker-compse up --build -d $@"
+alias dcub="docker-compose up --build -d $@"
 alias dcd="docker-compose down $@"
+alias dclf="docker-compose logs --follow"
 
 #Git
 alias gti='git'
