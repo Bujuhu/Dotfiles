@@ -1,6 +1,6 @@
 *.local
 !/bin/.local/
-
+!/themes/.local/
 /atom/.atom/*
 !/atom/.atom/config.cson
 !/atom/.atom/package-list.txt
