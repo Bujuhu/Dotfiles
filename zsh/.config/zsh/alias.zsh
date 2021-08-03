@@ -79,6 +79,7 @@ alias printaliases="< ~/.config/zsh/alias.zsh"
 
 alias vibspwm="$EDITOR ~/Dotfiles/bspwm/.config/bspwm/bspwmrc"
 alias visxhkd="$EDITOR ~/Dotfiles/sxhkd/.config/sxhkd/sxhkdrc"
+alias vistartx=" $EDITOR ~/Dotfiles/X/.config/X11/xinitrc" 
 
 ## Keyboard Keymaps
 
@@ -86,6 +87,7 @@ alias visxhkd="$EDITOR ~/Dotfiles/sxhkd/.config/sxhkd/sxhkdrc"
 alias vialias="$EDITOR ~/Dotfiles/zsh/.config/zsh/alias.zsh"
 alias vienv="$EDITOR ~/Dotfiles/zsh/.config/zsh/environment.zsh"
 alias virc="$EDITOR ~/Dotfiles/zsh/.config/zsh/.zshrc"
+alias vizprofile="$EDITOR ~/Dotfiles/zsh/.config/zsh/.zprofile"
 alias vienvl="$EDITOR ~/Dotfiles/zsh/.config/zsh/environment.zsh.local"
 alias vissh="$EDITOR ~/Dotfiles/ssh/.ssh/config"
 

@@ -40,16 +40,16 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-
-
 #UI specific envireoment variables
 export QT_STYLE_OVERRIDE=GTK+
 
 #Load Keyboard layout (remap Caps lock to hyper key)
-xkbcomp $xkbcomp $DISPLAY &
+
+xkbcomp $xkbcomp $DISPLAY 
 
 #Load Window compositor
-picom -b --config ~/.config/picom.conf &
+[[ -z "$XRDP_SESSION" ]] &&
+picom -b --config ~/.config/picom.conf 
 
 #Enable the Lockscreen
 xss-lock -- lock &
@@ -59,4 +59,4 @@ feh --bg-fill --no-fehbg "$XDG_DATA_HOME/wallpapers/cavestory.png"
 #Start Apps
 redshift -l 48:16 -r &
 #Start Window Manager
-bspwm
+bspwm 2> "$XDG_DATA_HOME/bspwm/bspwm.log"
