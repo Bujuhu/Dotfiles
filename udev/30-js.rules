@@ -1,0 +1,2 @@
+ACTION=="bind", SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/run/user/1000/Xauthority", RUN+="/usr/bin/su bujuhu -c /home/bujuhu/.local/bin/action-planck-connect"
+ACTION=="remove", SUBSYSTEM=="usb", ENV{PRODUCT}=="feed/6060/6", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/run/user/1000/Xauthority", RUN+="/usr/bin/su bujuhu -c /home/bujuhu/.local/bin/action-planck-disconnect"
