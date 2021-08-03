@@ -10,17 +10,23 @@ alias netl='networkctl'
 alias tdl='timedatectl'
 
 #Docker
-alias ds="sudo systemctl start docker"
+alias ds="doas /usr/bin/systemctl start docker"
 alias dkr="docker $@"
 alias db="docker build $@"
 alias db="docker tag $@"
 alias db="docker logs $@"
 alias dps="docker ps $@"
+alias dpc="docker container prune"
+alias dsc="docker stop $@"
+alias dpsa="docker ps -a $@"
 alias dkrc="docker-compose $@"
 alias dcu="docker-compose up -d"
 alias dcub="docker-compose up --build -d $@"
 alias dcd="docker-compose down $@"
 alias dclf="docker-compose logs --follow"
+
+#Esp-Idf
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 #Git
 alias gti='git'
@@ -90,6 +96,7 @@ alias virc="$EDITOR ~/Dotfiles/zsh/.config/zsh/.zshrc"
 alias vizprofile="$EDITOR ~/Dotfiles/zsh/.config/zsh/.zprofile"
 alias vienvl="$EDITOR ~/Dotfiles/zsh/.config/zsh/environment.zsh.local"
 alias vissh="$EDITOR ~/Dotfiles/ssh/.ssh/config"
+alias vivim="$EDITOR ~/Dotfiles/vim/.config/vim/vimrc"
 
 
 # Keymaps
