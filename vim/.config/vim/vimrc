@@ -32,4 +32,5 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 set nocp
 filetype plugin on
 
-set tabstop=4
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
