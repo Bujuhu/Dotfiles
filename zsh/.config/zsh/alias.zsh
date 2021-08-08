@@ -25,10 +25,12 @@ alias dcub="docker-compose up --build -d $@"
 alias dcd="docker-compose down $@"
 alias dclf="docker-compose logs --follow"
 
-#Esp-Idf
+#Loading and Reloading
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias reload_gpg_agent="gpg-connect-agent reloadagent /bye" 
 
 #Git
+alias git="GPG_TTY=$(tty) git" 
 alias gti='git'
 alias gis='git status'
 alias gia="git add $@"
