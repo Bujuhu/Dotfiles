@@ -41,7 +41,7 @@ alias gsb="git checkout $@" #Git switch Branch
 alias gpb="git branch" #Git print branch
 alias gil="git log"
 
-alias enable='su -c $SHELL'
+alias enable='su -c -m $SHELL'
 
 command-e npm &&
 alias npm-exec='PATH=$(npm bin):$PATH'
