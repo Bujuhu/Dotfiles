@@ -6,5 +6,5 @@ ifneq ($(shell id -u), 0)
 else
 	cp startwm.sh /etc/xrdp/startwm.sh
 	chown root:root /etc/xrdp/startwm.sh
-	chmod 733 /etc/xrdp/startwm.sh
+	chmod 755 /etc/xrdp/startwm.sh
 endif
