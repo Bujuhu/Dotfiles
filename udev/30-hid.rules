@@ -1,0 +1,3 @@
+ACTION=="bind", SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/run/user/{{uid}}/Xauthority", RUN+="/usr/bin/su {{uname}} -c /usr/lib/udev-scripts/planck-connect"
+ACTION=="remove", SUBSYSTEM=="usb", ENV{PRODUCT}=="feed/6060/6", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/run/user/{{uid}}/Xauthority", RUN+="/usr/bin/su {{uname}} -c /usr/lib/udev-scripts/planck-disconnect"
+

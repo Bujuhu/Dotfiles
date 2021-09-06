@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export XAUTHORITY=/run/user/$UID/Xauthority
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$UID/bus"
+
+setxkbmap -layout us -variant altgr-intl
+notify-send "Planck Connected"
