@@ -27,6 +27,7 @@ alias dclf="docker-compose logs --follow"
 
 #Loading and Reloading
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias get_nvm='. /usr/share/nvm/init-nvm.sh'
 alias reload_gpg_agent="gpg-connect-agent reloadagent /bye" 
 
 #Git
@@ -43,7 +44,7 @@ alias gsb="git checkout $@" #Git switch Branch
 alias gpb="git branch" #Git print branch
 alias gil="git log"
 
-alias enable='su -c -m $SHELL'
+alias enable='su -m -c $SHELL'
 
 command-e npm &&
 alias npm-exec='PATH=$(npm bin):$PATH'
@@ -74,6 +75,7 @@ alias teamspeak3="flatpak run com.teamspeak.TeamSpeak"
 alias steam="flatpak run com.valvesoftware.Steam"
 alias dbeaver="flatpak run io.dbeaver.DBeaverCommunity"
 alias minecraft="flatpak run com.mojang.Minecraft"
+alias teams="flatpak run com.github.IsmaelMartinez.teams_for_linux"
 
 #Aliases for Applications to ensure they comply to the XDG Base Directory Spec
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
