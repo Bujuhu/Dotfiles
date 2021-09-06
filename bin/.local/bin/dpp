@@ -1,9 +1,0 @@
-#!/usr/bin/gawk -f
-match($0,/<%\s*((\w|\d|\.)+)\s*%>/, rmatch){
-  ("xgetres " rmatch[1]) | getline result;
-  close("xgetres " rmatch[1]);
-  gsub(/<%\s*((\w|\d|\.)+)\s*%>/, result, $0)
-  print($0);
-  next;
-}
-{print $0}
