@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-WALLPAPER=$HOME/.wallpapers/cavestory_$SW.png
-
 #Config is heavily inspired by betterlockscreen:
 # https://github.com/pavanjadhaw/betterlockscreen
 
@@ -12,7 +10,7 @@ passwordIncorrect=d23c3dff
 background=00000000
 foreground=ffffffff
 
-i3lock -n -t -i ~/.var/wallpapers/cavestory_1080.png\
+i3lock -n -t -i ~/.local/share/wallpapers/cavestory_1080.png\
 		--timepos="110:h-80" \
 		--datepos="110:h-60" \
 		--clock --datestr "%d of %b, %Y" \
