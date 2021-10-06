@@ -1,6 +1,6 @@
 #!/build/zsh
 
-alias command-e="command -v $1 > /dev/null"
+alias command-e="command -v $1 &> /dev/null"
 
 # Setting XDG Base Directories
 export XDG_CONFIG_HOME=$HOME/.config
