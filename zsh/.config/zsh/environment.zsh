@@ -48,9 +48,27 @@ export EDITOR=vim
 export VISUAL=editor
 
 #Expoting Partial Path here to ensure that ruby is not called evrey time a new shell session is opened
-export PATH_ENV=$HOME/.local/bin:$HOME/.local/bin/lib:$HOME/.local/bin/application_shortcuts:~/.dotnet/tools
+export PATH_ENV=$HOME/.local/bin
+
+#Add Ruby Bins (if they exist)
 command-e ruby &&
 export PATH_ENV=$(ruby -e 'print Gem.user_dir')/bin:$PATH_ENV
+
+#Add Dotnet Bins (if they exist)
+command-e dotnet &&
+export PATH_ENV=$PATH_ENV:~/.dotnet/tools
+
+#Add Flatpak bins (if they exist)
+if [[ -n "$XDG_DATA_HOME" ]] && [[ -d "$XDG_DATA_HOME/flatpak/exports/bin" ]]; then
+  export PATH_ENV="$PATH_ENV:$XDG_DATA_HOME/flatpak/exports/bin"
+elif [[ -n "$HOME" ]] && [[ -d "$HOME/.local/share/flatpak/exports/bin" ]]; then
+  export PATH_ENV="$PATH_ENV:$HOME/.local/share/flatpak/exports/bin"
+fi
+
+if [[ -d /var/lib/flatpak/exports/bin ]]; then
+  export PATH_ENV="$PATH_ENV:/var/lib/flatpak/exports/bin"
+fi
+
 
 #Loading local environemnt variables
 [ -f "/$XDG_CONFIG_HOME/zsh/environment.zsh.local" ] && source "/$XDG_CONFIG_HOME/zsh/environment.zsh.local"
